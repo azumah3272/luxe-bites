@@ -624,7 +624,9 @@ footer {
 }
 
 /* ---------- RESPONSIVE ---------- */
+/* Tablet breakpoint: 900px and below */
 @media (max-width: 900px) {
+  /* Hero section: stack text and image vertically */
   .hero-section {
     grid-template-columns: 1fr;
     text-align: center;
@@ -634,14 +636,17 @@ footer {
     margin: 0 auto;
   }
 
+  /* Center action buttons on mobile */
   .hero-actions {
     justify-content: center;
   }
 
+  /* Hide main navigation, show bottom nav instead */
   .nav-group {
     display: none;
   }
 
+  /* Bottom navigation bar for tablet/mobile */
   .nav-group.right {
     display: flex !important;
     position: fixed;
@@ -662,6 +667,7 @@ footer {
     text-align: center;
   }
 
+  /* Smaller navigation link styling for bottom bar */
   .nav-group.right a {
     font-size: 0.75rem;
     padding: 0.6rem 0.8rem;
@@ -670,16 +676,19 @@ footer {
     transition: all 0.3s ease;
   }
 
+  /* Bottom nav hover: filled with accent color */
   .nav-group.right a:hover {
     background: var(--accent-base);
     color: white;
     padding: 0.6rem 1rem;
   }
 
+  /* Add padding to body to prevent content from hiding under fixed bottom nav */
   body {
     padding-bottom: 80px;
   }
 
+  /* Shop FAB positioned above bottom navigation */
   .shop-fab {
     position: fixed;
     bottom: 90px;
@@ -690,24 +699,30 @@ footer {
   }
 }
 
+/* Mobile breakpoint: 640px and below */
 @media (max-width: 640px) {
+  /* Reduce padding for visit section on small screens */
   .visit-us {
     padding: 3rem 1.5rem;
   }
 
+  /* Smaller heading for mobile */
   .visit-us h2 {
     font-size: 2rem;
   }
 
+  /* Adjust paragraph sizing */
   .visit-us > p {
     font-size: 0.95rem;
     margin-bottom: 2rem;
   }
 
+  /* Smaller address box padding */
   .visit-us address {
     padding: 1.5rem;
   }
 
+  /* Stack contact info vertically on mobile */
   .visit-info-item {
     margin: 1rem 0;
     flex-direction: column;
@@ -722,16 +737,19 @@ footer {
     font-size: 0.9rem;
   }
 
+  /* Smaller button sizing for mobile */
   .visit-phone-btn,
   .visit-us address a {
     font-size: 0.85rem;
     padding: 0.5rem 1.2rem;
   }
 
+  /* Reduce social icon spacing */
   .visit-us ul {
     gap: 1rem;
   }
 
+  /* Smaller social icons */
   .social-icon a {
     width: 40px;
     height: 40px;
@@ -739,6 +757,7 @@ footer {
   }
 }
 
+/* Accessibility: disable animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
