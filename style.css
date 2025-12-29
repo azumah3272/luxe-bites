@@ -1,0 +1,747 @@
+/* =========================
+   LUXE BITES – PROFESSIONAL THEME CSS
+   Premium confectionery aesthetic
+   ========================= */
+
+/* ---------- RESET ---------- */
+/* Universal box-sizing ensures padding and borders are included in element dimensions */
+/* Removes default margins and padding from all elements for cleaner styling control */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrolling for a polished navigation experience */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Uses the CSS variable for consistent font family throughout */
+  font-family: var(--body-font);
+  /* Light cream background for premium feel */
+  background: var(--secondary-tint);
+  /* Dark text color for readability */
+  color: var(--neutral-base);
+  /* Generous line height for comfortable reading */
+  line-height: 1.7;
+}
+
+/* Ensures images scale responsively and don't exceed their container width */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- DESIGN TOKENS ---------- */
+/* Color palette with base, shade (darker), and tint (lighter) variants for flexibility */
+/* Primary: Brown tones for premium chocolate/baked goods feel */
+/* Secondary: Cream/beige tones for backgrounds and neutral areas */
+/* Accent: Pink/rose tones for call-to-action buttons and highlights */
+:root {
+  --primary-base: #5c3a21;
+  --primary-shade: #3e2615;
+  --primary-tint: #8b5e3c;
+
+  --secondary-base: #f6e7d7;
+  --secondary-shade: #ead5c1;
+  --secondary-tint: #fff5eb;
+
+  --accent-base: #d94f70;
+  --accent-shade: #b03a54;
+  --accent-tint: #e67a92;
+
+  --neutral-base: #333333;
+  --neutral-light: #ffffff;
+
+  /* Border radius options: soft for cards, pill for buttons */
+  --radius-soft: 18px;
+  --radius-pill: 999px;
+
+  /* Subtle shadows for depth and layering */
+  --shadow-soft: 0 10px 30px rgba(92, 58, 33, 0.12);
+  --shadow-hover: 0 18px 40px rgba(92, 58, 33, 0.18);
+}
+
+/* ---------- LAYOUT UTIL ---------- */
+/* Max-width container prevents content from stretching too wide on large screens */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Consistent vertical padding for all major sections */
+section {
+  padding: 5rem 0;
+}
+
+/* ---------- HEADER / NAV ---------- */
+/* Sticky positioning keeps header visible while scrolling */
+header {
+  background: var(--secondary-base);
+  border-bottom: 1px solid rgba(92, 58, 33, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Main navigation container with flexbox for horizontal layout */
+.header-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Navigation list - horizontal layout with gaps between items */
+.nav-group {
+  display: flex;
+  gap: 2.2rem;
+  list-style: none;
+}
+
+/* Uppercase, letter-spaced navigation links with smooth hover effects */
+.nav-group a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary-base);
+  position: relative;
+  padding: 0.4rem 0;
+  line-height: 1;
+  /* Smooth transition for padding and letter-spacing on hover */
+  transition: padding 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    letter-spacing 0.35s ease;
+}
+
+/* Hover and focus states: increase padding and spacing for emphasis */
+.nav-group a:hover,
+.nav-group a:focus-visible {
+  padding: 0.6rem 0;
+  letter-spacing: 0.18em;
+}
+
+/* Animated underline appears on hover using pseudo-element */
+.nav-group a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-base);
+  transform: translateX(-50%);
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nav-group a:hover::after,
+.nav-group a:focus-visible::after {
+  width: 100%;
+}
+
+/* ---------- LOGO ---------- */
+/* Premium serif font with gradient text effect and italic styling */
+.logo {
+  font-family: "Prata", serif;
+  font-size: 2.6rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--primary-shade);
+  position: relative;
+  /* Gradient background clipped to text creates multi-color text effect */
+  background: linear-gradient(
+    135deg,
+    var(--primary-shade) 0%,
+    var(--primary-tint) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  transition: all 0.3s ease;
+  font-style: italic;
+}
+
+/* Logo hover effect: increases letter spacing and slightly scales up */
+.logo:hover {
+  letter-spacing: 0.15em;
+  transform: scale(1.02);
+}
+
+/* Pseudo-element adds "PÂTISSERIE" subtitle below main logo */
+.logo::after {
+  content: "PÂTISSERIE";
+  display: block;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.5em;
+  text-align: center;
+  margin-top: 0.3rem;
+  color: var(--accent-base);
+  font-weight: 600;
+  /* Gradient applied to subtitle for visual cohesion */
+  background: linear-gradient(
+    135deg,
+    var(--accent-base) 0%,
+    var(--accent-tint) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---------- SHOP FAB ---------- */
+/* Floating Action Button: prominent call-to-action with gradient and shadow */
+.shop-fab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem 1.8rem;
+  /* Pink gradient for eye-catching visibility */
+  background: linear-gradient(
+    135deg,
+    var(--accent-base) 0%,
+    var(--accent-tint) 100%
+  );
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 8px 25px rgba(217, 79, 112, 0.25);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Pseudo-element creates ripple effect on hover */
+.shop-fab::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease;
+  z-index: 0;
+}
+
+/* Icon positioned above ripple effect */
+.shop-fab i {
+  position: relative;
+  z-index: 1;
+  font-size: 1.1rem;
+}
+
+/* Label text positioned above ripple */
+.shop-label {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover state: lifts button and expands ripple effect */
+.shop-fab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(217, 79, 112, 0.35);
+}
+
+.shop-fab:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Active state: subtle press effect */
+.shop-fab:active {
+  transform: translateY(-1px);
+}
+
+/* ---------- HERO ---------- */
+/* Two-column layout: text on left, hero image on right */
+.hero-section {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+/* Small uppercase label above main heading */
+.small-paragraph {
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.75rem;
+  color: var(--primary-tint);
+}
+
+/* Large serif heading with gradient effect */
+.hero-heading {
+  font-family: "Prata", serif;
+  font-size: 4rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--primary-shade);
+  margin: 1rem 0;
+  background: linear-gradient(
+    135deg,
+    var(--primary-shade) 0%,
+    var(--primary-tint) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.08em;
+  text-shadow: none;
+}
+
+/* Reusable header style for section titles */
+.section-header {
+  font-size: 1.4rem;
+  color: var(--primary-base);
+  margin-bottom: 1rem;
+}
+
+/* Body copy with max-width for readability */
+.section-paragraph {
+  max-width: 480px;
+  opacity: 0.85;
+}
+
+/* Container for call-to-action buttons */
+.hero-actions {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.hero-actions a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Primary button: filled with accent color */
+/* Secondary button: outlined/minimal style */
+.hero-primary-cta,
+.hero-secondary-cta {
+  padding: 0.9rem 2.2rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.hero-primary-cta {
+  background: var(--accent-base);
+  color: white;
+  border: none;
+  box-shadow: var(--shadow-soft);
+}
+
+/* Primary button hover: darker color and lift effect */
+.hero-primary-cta:hover {
+  background: var(--accent-shade);
+  transform: translateY(-2px);
+}
+
+.hero-primary-cta:focus-visible {
+  outline: 3px solid var(--accent-tint);
+  outline-offset: 3px;
+}
+
+/* Secondary button hover: filled with primary color */
+.hero-secondary-cta:hover {
+  background: var(--primary-base);
+  color: white;
+}
+
+.hero-secondary-cta:focus-visible {
+  outline: 2px solid var(--primary-base);
+  outline-offset: 3px;
+}
+
+/* Hero image styling with rounded corners and shadow */
+.hero-image-container img {
+  border-radius: var(--radius-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ---------- SIGNATURE GRID ---------- */
+/* Section for featured product showcase with cream background */
+.signature-collection {
+  background: var(--secondary-base);
+}
+
+.signature-collection .section-header {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+}
+
+/* Responsive grid layout for product cards */
+.signature-grid {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 0 2rem;
+  display: grid;
+  /* auto-fit creates responsive columns that shrink to minimum 260px */
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Individual product card with hover elevation effect */
+.signature-card {
+  background: var(--secondary-tint);
+  border-radius: var(--radius-soft);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.35s ease;
+}
+
+/* Hover state: lifts card and increases shadow for depth */
+.signature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Focus-within for keyboard navigation */
+.signature-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Product image with smooth zoom effect on hover */
+.signature-image img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.signature-card:hover img {
+  transform: scale(1.04);
+}
+
+/* Product info section with padding */
+.signature-info {
+  padding: 1.5rem;
+}
+
+.signature-info h3 {
+  color: var(--primary-shade);
+  margin-bottom: 0.4rem;
+}
+
+/* Price styling - accent color for prominence */
+.price {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: var(--accent-base);
+  font-weight: 600;
+}
+
+/* ---------- VISIT SECTION ---------- */
+/* Centered contact/location information section */
+.visit-us {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+/* Large serif heading for section title */
+.visit-us h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  color: var(--primary-shade);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* Introductory paragraph above address details */
+.visit-us > p {
+  font-size: 1.05rem;
+  color: var(--neutral-base);
+  margin-bottom: 3rem;
+  opacity: 0.9;
+  line-height: 1.8;
+}
+
+/* Address box with light background */
+.visit-us address {
+  background: var(--secondary-base);
+  padding: 2rem;
+  border-radius: var(--radius-soft);
+  margin: 2rem 0;
+  font-style: normal;
+}
+
+/* Each contact info item (address, hours, phone) */
+.visit-info-item {
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Icon styling with accent color */
+.visit-info-item i {
+  color: var(--accent-base);
+  font-size: 1.3rem;
+  width: 30px;
+  flex-shrink: 0;
+}
+
+/* Contact info text styling */
+.visit-info-item p {
+  margin: 0;
+  color: var(--primary-base);
+  font-weight: 500;
+  display: inline;
+}
+
+/* Phone button styling (optional alternative to link) */
+.visit-phone-btn {
+  display: inline-block;
+  margin: 1rem auto 0;
+  padding: 0.6rem 1.5rem;
+  background: var(--accent-base);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+/* Address links (for email, map, etc.) */
+.visit-us address a {
+  display: block;
+  margin: 1rem auto 0;
+  padding: 0.6rem 1.5rem;
+  background: var(--accent-base);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  width: fit-content;
+}
+
+/* Link hover effect: darker background and lift */
+.visit-us address a:hover {
+  background: var(--accent-shade);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Social media icons list */
+.visit-us ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Individual social media icon styling */
+.social-icon a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: var(--accent-base);
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  font-weight: 500;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pseudo-element creates expanding background on hover */
+.social-icon a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: var(--accent-tint);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  z-index: 0;
+}
+
+/* Icon positioned above expanding background */
+.social-icon a i {
+  position: relative;
+  z-index: 1;
+}
+
+/* Social icon hover: scale, rotate, and expand background */
+.social-icon a:hover {
+  background: var(--accent-base);
+  transform: scale(1.15) rotate(8deg);
+  box-shadow: 0 8px 20px rgba(217, 79, 112, 0.3);
+}
+
+.social-icon a:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- FOOTER ---------- */
+/* Dark footer with white text for strong visual separation */
+footer {
+  background: var(--primary-shade);
+  color: white;
+  text-align: center;
+  padding: 1.8rem 1rem;
+  font-size: 0.8rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-section .section-paragraph {
+    margin: 0 auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .nav-group {
+    display: none;
+  }
+
+  .nav-group.right {
+    display: flex !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    background: var(--secondary-base);
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(92, 58, 33, 0.1);
+    z-index: 999;
+  }
+
+  .nav-group.right li {
+    flex: 1;
+    text-align: center;
+  }
+
+  .nav-group.right a {
+    font-size: 0.75rem;
+    padding: 0.6rem 0.8rem;
+    display: inline-block;
+    border-radius: var(--radius-pill);
+    transition: all 0.3s ease;
+  }
+
+  .nav-group.right a:hover {
+    background: var(--accent-base);
+    color: white;
+    padding: 0.6rem 1rem;
+  }
+
+  body {
+    padding-bottom: 80px;
+  }
+
+  .shop-fab {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    z-index: 998;
+    font-size: 0.8rem;
+    padding: 0.7rem 1.4rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .visit-us {
+    padding: 3rem 1.5rem;
+  }
+
+  .visit-us h2 {
+    font-size: 2rem;
+  }
+
+  .visit-us > p {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .visit-us address {
+    padding: 1.5rem;
+  }
+
+  .visit-info-item {
+    margin: 1rem 0;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .visit-info-item i {
+    font-size: 1.1rem;
+  }
+
+  .visit-info-item p {
+    font-size: 0.9rem;
+  }
+
+  .visit-phone-btn,
+  .visit-us address a {
+    font-size: 0.85rem;
+    padding: 0.5rem 1.2rem;
+  }
+
+  .visit-us ul {
+    gap: 1rem;
+  }
+
+  .social-icon a {
+    width: 40px;
+    height: 40px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
