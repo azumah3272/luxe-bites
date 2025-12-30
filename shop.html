@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop | Luxe Bites - Order Online</title>
+    <meta name="description"
+        content="Order gourmet pastries, desserts and baked delicacies from Luxe Bites. Fast delivery available." />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prata&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="header-nav split-nav">
+            <ul class="nav-group left">
+                <li><a href="index.html#about" class="boutique-link">Our Story</a></li>
+                <li>
+                    <a href="index.html#signature" class="boutique-link">Signature Grid</a>
+                </li>
+            </ul>
+
+            <a href="index.html" class="logo">Luxe Bites</a>
+
+            <ul class="nav-group right">
+                <li><a href="index.html#visit" class="boutique-link">Visit Us</a></li>
+                <li><a href="index.html#contact" class="boutique-link">Contact</a></li>
+            </ul>
+
+            <a href="shop.html" class="shop-fab" aria-label="Shop Now">
+                <i class="fas fa-shopping-basket"></i>
+                <span class="shop-label">Shop Now</span>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="shop-hero">
+            <h1>Order Online</h1>
+            <p>Premium pastries and delicacies delivered to your doorstep</p>
+        </section>
+
+        <div class="shop-container">
+            <!-- Menu Section -->
+            <section class="menu-section">
+                <!-- Category Filter -->
+                <div class="category-filter">
+                    <button class="category-btn active" data-category="all">All Items</button>
+                    <button class="category-btn" data-category="pastries">Pastries</button>
+                    <button class="category-btn" data-category="tarts">Tarts</button>
+                    <button class="category-btn" data-category="chocolate">Chocolate</button>
+                    <button class="category-btn" data-category="specialty">Specialty</button>
+                    <button class="category-btn" data-category="drinks">Drinks</button>
+                    <button class="category-btn" data-category="bundles">Bundles</button>
+                </div>
+
+                <!-- Menu Grid -->
+                <div class="menu-grid" id="menuGrid">
+                    <!-- Products will be inserted here by JavaScript -->
+                    <article class="menu-item" data-category="pastries">
+                        <div class="menu-item-image">
+                            <img src="assets/apdc.webp" alt="Pain au Chocolate" loading="lazy" />
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Pain au Chocolate</h3>
+                            <p class="item-description">Naturally fermented, crusty on the outside, soft within.</p>
+                            <span class="item-price">GH₵100.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Pain au Chocolate" data-price="100">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-category="specialty">
+                        <div class="menu-item-image">
+                            <img src="assets/chez jean-claude patisserie.webp" alt="Chez Jean-Claude Patisserie"
+                                loading="lazy" />
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Chez Jean-Claude Patisserie</h3>
+                            <p class="item-description">A signature blend of light sponge and seasonal fruit preserves.
+                            </p>
+                            <span class="item-price">GH₵400.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Chez Jean-Claude Patisserie"
+                                    data-price="400">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-category="chocolate">
+                        <div class="menu-item-image">
+                            <img src="assets/Dark Ganache.webp" alt="Dark Ganache" loading="lazy" />
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Dark Ganache</h3>
+                            <p class="item-description">Pure luxury featuring 70% single-origin cocoa for a bold finish.
+                            </p>
+                            <span class="item-price">GH₵120.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Dark Ganache" data-price="120">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-category="tarts">
+                        <div class="menu-item-image">
+                            <img src="assets/egg tart.webp" alt="Egg Tart" loading="lazy" />
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Egg Tart</h3>
+                            <p class="item-description">A shattered-glass flaky crust holding a rich, caramelized
+                                custard center.</p>
+                            <span class="item-price">GH₵80.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Egg Tart" data-price="80">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-category="tarts">
+                        <div class="menu-item-image">
+                            <img src="assets/fruit tart.webp" alt="Fruit Tart" loading="lazy" />
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Fruit Tart</h3>
+                            <p class="item-description">Crisp buttery shortcrust shell crowned with vibrant seasonal
+                                berries.</p>
+                            <span class="item-price">GH₵120.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Fruit Tart" data-price="120">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-category="pastries">
+                        <div class="menu-item-image">
+                            <img src="assets/gc.webp" alt="Gourmet Croissant" loading="lazy" />
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Gourmet Croissant</h3>
+                            <p class="item-description">Flaky, golden, and delicately layered for a perfect bite.</p>
+                            <span class="item-price">GH₵50.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Gourmet Croissant" data-price="50">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-category="pastries">
+                        <div class="menu-item-image">
+                            <img src="assets/gm1.webp" alt="Gourmet Macaroon" loading="lazy" />
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Gourmet Macaroon</h3>
+                            <p class="item-description">Light sponge and refined frosting with perfectly balanced
+                                sweetness.</p>
+                            <span class="item-price">GH₵35.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Gourmet Macaroon" data-price="35">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-category="chocolate">
+                        <div class="menu-item-image">
+                            <img src="assets/Handmade Chocolate Pralines.webp" alt="Chocolate Pralines"
+                                loading="lazy" />
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Chocolate Pralines</h3>
+                            <p class="item-description">Artisanal selection ranging from velvety dark ganache to toasted
+                                hazelnut crunch.</p>
+                            <span class="item-price">GH₵65.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Chocolate Pralines" data-price="65">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-category="specialty">
+                        <div class="menu-item-image">
+                            <img src="assets/lp.webp" alt="Lavender Eclair" loading="lazy" />
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Lavender Eclair</h3>
+                            <p class="item-description">Delicate choux pastry filled with honey cream and finished with
+                                silky lavender glaze.</p>
+                            <span class="item-price">GH₵200.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Lavender Eclair" data-price="200">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- NEW DRINKS SECTION -->
+                    <article class="menu-item" data-category="drinks">
+                        <div class="menu-item-image">
+                            <div class="placeholder-image"
+                                style="background: linear-gradient(135deg, #8B4513, #D2691E); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+                                <i class="fas fa-coffee" style="font-size: 3rem; color: #fff; opacity: 0.7;"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Premium Espresso</h3>
+                            <p class="item-description">Rich, bold single-origin espresso shot. Perfect complement to
+                                any pastry.</p>
+                            <span class="item-price">GH₵12.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Premium Espresso" data-price="12">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-category="drinks">
+                        <div class="menu-item-image">
+                            <div class="placeholder-image"
+                                style="background: linear-gradient(135deg, #F5DEB3, #D2B48C); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+                                <i class="fas fa-mug-hot" style="font-size: 3rem; color: #8B4513; opacity: 0.7;"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Cappuccino Luxe</h3>
+                            <p class="item-description">Silky smooth cappuccino with premium European milk and cocoa
+                                dust.</p>
+                            <span class="item-price">GH₵18.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Cappuccino Luxe" data-price="18">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-category="drinks">
+                        <div class="menu-item-image">
+                            <div class="placeholder-image"
+                                style="background: linear-gradient(135deg, #FFD700, #FFA500); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+                                <i class="fas fa-leaf" style="font-size: 3rem; color: #fff; opacity: 0.7;"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Matcha Latte</h3>
+                            <p class="item-description">Creamy matcha tea whisked with premium milk and a hint of honey.
+                            </p>
+                            <span class="item-price">GH₵16.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Matcha Latte" data-price="16">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-category="drinks">
+                        <div class="menu-item-image">
+                            <div class="placeholder-image"
+                                style="background: linear-gradient(135deg, #FFB6C1, #FF69B4); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+                                <i class="fas fa-glass-water" style="font-size: 3rem; color: #fff; opacity: 0.7;"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Raspberry Hibiscus Cooler</h3>
+                            <p class="item-description">Refreshing infusion of hibiscus and fresh raspberry. Perfect for
+                                warm days.</p>
+                            <span class="item-price">GH₵14.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Raspberry Hibiscus Cooler"
+                                    data-price="14">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-category="drinks">
+                        <div class="menu-item-image">
+                            <div class="placeholder-image"
+                                style="background: linear-gradient(135deg, #8B7355, #D2B48C); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+                                <i class="fas fa-wine-glass" style="font-size: 3rem; color: #fff; opacity: 0.7;"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Hot Chocolate Indulgence</h3>
+                            <p class="item-description">Rich, velvety hot chocolate with 70% dark chocolate and vanilla.
+                                Topped with whipped cream.</p>
+                            <span class="item-price">GH₵20.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Hot Chocolate Indulgence" data-price="20">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- BUNDLE DEALS SECTION -->
+                    <article class="menu-item" data-category="bundles">
+                        <div class="menu-item-image">
+                            <div class="placeholder-image"
+                                style="background: linear-gradient(135deg, #FFD700, #FF8C00); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+                                <i class="fas fa-gift" style="font-size: 3rem; color: #fff; opacity: 0.7;"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Breakfast Bundle</h3>
+                            <p class="item-description">1x Gourmet Croissant + 1x Pain au Chocolate + 1x Cappuccino
+                                Luxe. Perfect start to your day.</p>
+                            <span class="item-price">GH₵75.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Breakfast Bundle" data-price="75">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-category="bundles">
+                        <div class="menu-item-image">
+                            <div class="placeholder-image"
+                                style="background: linear-gradient(135deg, #D94F70, #E67A92); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+                                <i class="fas fa-heart" style="font-size: 3rem; color: #fff; opacity: 0.7;"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Lover's Collection</h3>
+                            <p class="item-description">2x Gourmet Macaroons + 1x Dark Ganache + 1x Hot Chocolate
+                                Indulgence. Share the luxury.</p>
+                            <span class="item-price">GH₵85.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Lover's Collection" data-price="85">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="menu-item" data-category="bundles">
+                        <div class="menu-item-image">
+                            <div class="placeholder-image"
+                                style="background: linear-gradient(135deg, #8B5E3C, #D2691E); display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+                                <i class="fas fa-crown" style="font-size: 3rem; color: #FFD700; opacity: 0.7;"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item-info">
+                            <h3>Royal Deluxe Box</h3>
+                            <p class="item-description">Premium selection: Lavender Eclair, Chez Jean-Claude, Chocolate
+                                Pralines + 2x Cappuccino Luxe.</p>
+                            <span class="item-price">GH₵350.00</span>
+                            <div class="item-actions">
+                                <div class="quantity-selector">
+                                    <button class="qty-btn minus" aria-label="Decrease quantity">−</button>
+                                    <input type="number" class="qty-input" value="1" min="1" />
+                                    <button class="qty-btn plus" aria-label="Increase quantity">+</button>
+                                </div>
+                                <button class="add-to-cart-btn" data-product="Royal Deluxe Box" data-price="350">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Cart Sidebar -->
+            <aside class="cart-sidebar">
+                <h2 class="cart-title">Order Summary</h2>
+                <div class="cart-items" id="cartItems">
+                    <p class="cart-empty">Your cart is empty</p>
+                </div>
+
+                <div class="cart-totals">
+                    <div class="total-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">GH₵0.00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Delivery Fee:</span>
+                        <span id="deliveryFee">GH₵10.00</span>
+                    </div>
+                    <div class="total-row">
+                        <span>Tax (VAT):</span>
+                        <span id="tax">GH₵0.00</span>
+                    </div>
+                    <div class="total-row total">
+                        <span>Total:</span>
+                        <span id="total">GH₵10.00</span>
+                    </div>
+                </div>
+
+                <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+                <button class="clear-cart-btn" id="clearCartBtn">Clear Cart</button>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p class="copyright">&copy;Luxe Bites. All rights reserved.</p>
+    </footer>
+
+    <script src="shop.js"></script>
+</body>
+
+</html>
